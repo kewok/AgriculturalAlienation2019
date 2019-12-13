@@ -16,7 +16,7 @@ m2 <- lme(h~year*n+year*i, random=~+1|state,data=df, cor=corAR1())
 # Test for temporal autocorrelation in all variables 
 anova(m1,m2)
 
-# MOdel with no yearly trend in nature and no temporal autocorrelation
+# Model with no yearly trend in nature and no temporal autocorrelation
 m3 <- lme(h~n+year*i, random=~+1|state,data=df, cor=corAR1())
 m3_alt <- lme(h~n+year*i, random=~+1|state,data=df)
 summary(m3)$AIC
